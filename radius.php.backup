@@ -36,10 +36,10 @@ $code = 200;
 try {
     switch ($action) {
         case 'authenticate':
-            $username = _req('User-Name') ?: _req('username');
-            $password = _req('User-Password') ?: _req('password');
-            $CHAPassword = _req('CHAP-Password') ?: _req('CHAPassword');
-            $CHAPchallenge = _req('CHAP-Challenge') ?: _req('CHAPchallenge');
+            $username = _req('username');
+            $password = _req('password');
+            $CHAPassword = _req('CHAPassword');
+            $CHAPchallenge = _req('CHAPchallenge');
             $isCHAP = false;
             if (!empty($CHAPassword)) {
                 $c = ORM::for_table('tbl_customers')->select('password')->select('pppoe_password')->whereRaw("BINARY username = '$username' AND status = 'Active'")->find_one();
@@ -129,11 +129,11 @@ try {
             }
             break;
         case 'authorize':
-            $username = _req('User-Name') ?: _req('username');
-            $password = _req('User-Password') ?: _req('password');
+            $username = _req('username');
+            $password = _req('password');
             $isVoucher = ($username == $password);
-            $CHAPassword = _req('CHAP-Password') ?: _req('CHAPassword');
-            $CHAPchallenge = _req('CHAP-Challenge') ?: _req('CHAPchallenge');
+            $CHAPassword = _req('CHAPassword');
+            $CHAPchallenge = _req('CHAPchallenge');
             $isCHAP = false;
             if (!empty($CHAPassword)) {
                 $c = ORM::for_table('tbl_customers')->select('password')->select('pppoe_password')->whereRaw("BINARY username = '$username' AND status = 'Active'")->find_one();
@@ -264,7 +264,7 @@ try {
             }
             break;
         case 'accounting':
-            $username = _req('User-Name') ?: _req('username');
+            $username = _req('username');
             if (empty($username)) {
                 show_radius_result([
                     "control:Auth-Type" => "Reject",

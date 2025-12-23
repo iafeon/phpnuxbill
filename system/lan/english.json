@@ -506,5 +506,20 @@
     "When_Expired__customer_will_be_move_to_selected_internet_package": "When Expired, customer will be move to selected internet package",
     "Continue_the_process_of_changing_Hotspot_Package_data_": "Continue the process of changing Hotspot Package data?",
     "Or": "Or",
-    "Months": "Months"
+    "Months": "Months",
+    "Select_Account": "Select Account",
+    "Select_a_customer": "Select a customer",
+    "PPPOE_Plans": "PPPOE Plans",
+    "VPN_Plans": "VPN Plans",
+    "Select_Routers": "Select Routers",
+    "Service_Plan": "Service Plan",
+    "Select_Plans": "Select Plans",
+    "Using": "Using",
+    "Postpaid_Recharge_for_the_first_time_use": "Postpaid Recharge for the first time use",
+    "Continue_the_Recharge_process": "Continue the Recharge process",
+    "Add_Service_Package": "Add Service Package",
+    "Personal_Plan_will_only_show_to_personal_Customer__Business_package_will_only_show_to_Business_Customer": "Personal Plan will only show to personal Customer, Business package will only show to Business Customer",
+    "Cannot_be_change_after_saved": "Cannot be change after saved",
+    "Select_Bandwidth": "Select Bandwidth",
+    "Continue_the_Hotspot_Package_creation_process_": "Continue the Hotspot Package creation process?"
 }
