@@ -24,7 +24,7 @@ if (empty($action)) {
 $code = 200;
 
 //debug
-// if (!empty($action)) {
+if (!empty($action)) {
 //     file_put_contents("$action.json", json_encode([
 //         'header' => $_SERVER,
 //         'get' => $_GET,
