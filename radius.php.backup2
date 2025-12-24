@@ -419,7 +419,6 @@ function process_radiust_rest($tur, $code)
             else
                 $timelimit = $plan['time_limit'] * 60;
             $attrs['reply:Max-All-Session'] = $timelimit;
-            $attrs['reply:Session-Timeout'] = $timelimit;
             $attrs['reply:Expire-After'] = $timelimit;
         } else if ($plan['limit_type'] == "Data_Limit") {
             if ($plan['data_unit'] == 'GB')
@@ -439,7 +438,6 @@ function process_radiust_rest($tur, $code)
             else
                 $datalimit = $plan['data_limit'] . "000000";
             $attrs['reply:Max-All-Session'] = $timelimit;
-            $attrs['reply:Session-Timeout'] = $timelimit;
             $attrs['reply:Max-Data'] = $datalimit;
             $attrs['reply:Mikrotik-Recv-Limit-Gigawords'] = $datalimit;
             $attrs['reply:Mikrotik-Xmit-Limit-Gigawords'] = $datalimit;
