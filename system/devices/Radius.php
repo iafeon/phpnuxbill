@@ -104,10 +104,10 @@ class Radius
             $this->customerAddPlan($customer, $plan, $date_exp . ' ' . $time);
         }
     }
-	
-	function sync_customer($customer, $plan)
-    {	
-		$t = ORM::for_table('tbl_user_recharges')->where('username', $customer['username'])->where('status', 'on')->findOne();
+
+    function sync_customer($customer, $plan)
+    {
+        $t = ORM::for_table('tbl_user_recharges')->where('username', $customer['username'])->where('status', 'on')->findOne();
         $date_exp = $t['expiration'];
         $time = $t['time'];
         $this->customerAddPlan($customer, $plan, $date_exp . ' ' . $time);
@@ -121,8 +121,8 @@ class Radius
                 $this->customerAddPlan($customer, $p);
             }
         } else {
-        $this->customerDeactivate($customer['username'], true);
-		}
+            $this->customerDeactivate($customer['username'], true);
+        }
     }
 
     public function change_username($plan, $from, $to)
@@ -394,15 +394,15 @@ class Radius
             }
 
             if ($plan['type'] == 'PPPOE') {
-				if (!empty($customer['pppoe_ip']) && $expired != '') {
-				$this->upsertCustomerAttr($customer['username'], 'Framed-Pool', $plan['pool'], ':=');
-				$this->upsertCustomerAttr($customer['username'], 'Framed-IP-Address', $customer['pppoe_ip'], ':=');
-				$this->upsertCustomerAttr($customer['username'], 'Framed-IP-Netmask', '255.255.255.0', ':=');
-					}else{
-                $this->upsertCustomerAttr($customer['username'], 'Framed-Pool', $plan['pool'], ':=');
-				$this->upsertCustomerAttr($customer['username'], 'Framed-IP-Address', '0.0.0.0', ':=');
-				$this->upsertCustomerAttr($customer['username'], 'Framed-IP-Netmask', '255.255.255.0', ':=');
-				}
+                if (!empty($customer['pppoe_ip']) && $expired != '') {
+                    $this->upsertCustomerAttr($customer['username'], 'Framed-Pool', $plan['pool'], ':=');
+                    $this->upsertCustomerAttr($customer['username'], 'Framed-IP-Address', $customer['pppoe_ip'], ':=');
+                    $this->upsertCustomerAttr($customer['username'], 'Framed-IP-Netmask', '255.255.255.0', ':=');
+                } else {
+                    $this->upsertCustomerAttr($customer['username'], 'Framed-Pool', $plan['pool'], ':=');
+                    $this->upsertCustomerAttr($customer['username'], 'Framed-IP-Address', '0.0.0.0', ':=');
+                    $this->upsertCustomerAttr($customer['username'], 'Framed-IP-Netmask', '255.255.255.0', ':=');
+                }
             }
 
 
@@ -417,8 +417,9 @@ class Radius
         if ($plan['type'] == 'PPPOE') {
             $this->upsertCustomer($customer['username'], 'Cleartext-Password', (empty($customer['pppoe_password'])) ? $customer['password'] : $customer['pppoe_password']);
         } else {
-            $this->upsertCustomer($customer['username'], 'Cleartext-Password',  $customer['password']);
+            $this->upsertCustomer($customer['username'], 'Cleartext-Password', $customer['password']);
         }
+        // BACK IN radcheck: Mikrotik should handle limits (old working configuration)
         $this->upsertCustomer($customer['username'], 'Simultaneous-Use', ($plan['type'] == 'PPPOE') ? 1 : $plan['shared_users']);
         // Mikrotik Spesific
         $this->upsertCustomer($customer['username'], 'Port-Limit', ($plan['type'] == 'PPPOE') ? 1 : $plan['shared_users']);
@@ -429,7 +430,8 @@ class Radius
     private function delAtribute($table, $attribute, $key, $value)
     {
         $r = $table->where_equal($key, $value)->whereEqual('attribute', $attribute)->findOne();
-        if ($r) $r->delete();
+        if ($r)
+            $r->delete();
     }
 
     /**
