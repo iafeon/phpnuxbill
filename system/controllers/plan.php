@@ -773,6 +773,11 @@ switch ($action) {
                 }
             }
 
+
+            // Créer l'instance Radius pour gérer radcheck
+            require_once 'system/devices/Radius.php';
+            $radius = new Radius();
+
             foreach ($vouchers as $code) {
                 $d = ORM::for_table('tbl_voucher')->create();
                 $d->type = $type;
@@ -784,7 +789,14 @@ switch ($action) {
                 $d->generated_by = $admin['id'];
                 $d->save();
                 $newVoucherIds[] = $d->id();
+                
+                // Pour les vouchers RADIUS, créer immédiatement Cleartext-Password dans radcheck
+                // Cela évite le problème où les vouchers ne peuvent pas se connecter
+                if ($server == 'radius') {
+                    $radius->upsertCustomer("$prefix$code", 'Cleartext-Password', "$prefix$code");
+                }
             }
+
 
             if ($printNow == 'yes' && count($newVoucherIds) > 0) {
                 $template = file_get_contents("pages/Voucher.html");

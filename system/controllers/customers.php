@@ -81,7 +81,7 @@ switch ($action) {
             echo '"' . implode('","', $row) . "\"\n";
         }
         break;
-        //case csv-prepaid can be moved later to (plan.php)  php file dealing with prepaid users
+    //case csv-prepaid can be moved later to (plan.php)  php file dealing with prepaid users
     case 'csv-prepaid':
         if (!in_array($admin['user_type'], ['SuperAdmin', 'Admin'])) {
             _alert(Lang::T('You do not have permission to access this page'), 'danger', "dashboard");
@@ -157,7 +157,7 @@ switch ($action) {
         }
         $ui->assign('xheader', $leafletpickerHeader);
         run_hook('view_add_customer'); #HOOK
-        $ui->assign('csrf_token',  Csrf::generateAndStoreToken());
+        $ui->assign('csrf_token', Csrf::generateAndStoreToken());
         $ui->display('admin/customers/add.tpl');
         break;
     case 'recharge':
@@ -176,13 +176,13 @@ switch ($action) {
             $channel = $admin['fullname'];
             $cust = User::_info($id_customer);
             $plan = ORM::for_table('tbl_plans')->find_one($b['plan_id']);
-			$add_inv = User::getAttribute("Invoice", $id_customer);
-			if (!empty($add_inv)) {
-				$plan['price'] = $add_inv;
-			}
+            $add_inv = User::getAttribute("Invoice", $id_customer);
+            if (!empty($add_inv)) {
+                $plan['price'] = $add_inv;
+            }
             $tax_enable = isset($config['enable_tax']) ? $config['enable_tax'] : 'no';
             $tax_rate_setting = isset($config['tax_rate']) ? $config['tax_rate'] : null;
-            $custom_tax_rate = isset($config['custom_tax_rate']) ? (float)$config['custom_tax_rate'] : null;
+            $custom_tax_rate = isset($config['custom_tax_rate']) ? (float) $config['custom_tax_rate'] : null;
             if ($tax_rate_setting === 'custom') {
                 $tax_rate = $custom_tax_rate;
             } else {
@@ -228,8 +228,8 @@ switch ($action) {
             $ui->assign('channel', $channel);
             $ui->assign('server', $b['routers']);
             $ui->assign('plan', $plan);
-			$ui->assign('add_inv', $add_inv);
-            $ui->assign('csrf_token',  Csrf::generateAndStoreToken());
+            $ui->assign('add_inv', $add_inv);
+            $ui->assign('csrf_token', Csrf::generateAndStoreToken());
             $ui->display('admin/plan/recharge-confirm.tpl');
         } else {
             r2(getUrl('customers/view/') . $id_customer, 'e', 'Cannot find active plan');
@@ -291,7 +291,7 @@ switch ($action) {
                             require_once $dvc;
                             if (method_exists($dvc, 'sync_customer')) {
                                 (new $p['device'])->sync_customer($c, $p);
-                            }else{
+                            } else {
                                 (new $p['device'])->add_customer($c, $p);
                             }
                         } else {
@@ -368,7 +368,7 @@ switch ($action) {
             $ui->assign('d', $customer);
             $ui->assign('customFields', $customFields);
             $ui->assign('xheader', $leafletpickerHeader);
-            $ui->assign('csrf_token',  Csrf::generateAndStoreToken());
+            $ui->assign('csrf_token', Csrf::generateAndStoreToken());
             $ui->display('admin/customers/view.tpl');
         } else {
             r2(getUrl('customers/list'), 'e', Lang::T('Account Not Found'));
@@ -407,7 +407,7 @@ switch ($action) {
             $ui->assign('statuses', ORM::for_table('tbl_customers')->getEnum("status"));
             $ui->assign('customFields', $customFields);
             $ui->assign('xheader', $leafletpickerHeader);
-            $ui->assign('csrf_token',  Csrf::generateAndStoreToken());
+            $ui->assign('csrf_token', Csrf::generateAndStoreToken());
             $ui->display('admin/customers/edit.tpl');
         } else {
             r2(getUrl('customers/list'), 'e', Lang::T('Account Not Found'));
@@ -711,7 +711,8 @@ switch ($action) {
                         }
                         $c->photo = '/photos/' . $subfolder . '/' . $hash . '.jpg';
                     }
-                    if (file_exists($_FILES['photo']['tmp_name'])) unlink($_FILES['photo']['tmp_name']);
+                    if (file_exists($_FILES['photo']['tmp_name']))
+                        unlink($_FILES['photo']['tmp_name']);
                 } else {
                     r2(getUrl('settings/app'), 'e', 'PHP GD is not installed');
                 }
@@ -811,6 +812,13 @@ switch ($action) {
                                     }
                                 }
                                 (new $p['device'])->add_customer($c, $p);
+
+                                // Fix permanent: Mettre à jour explicitement radcheck si password changed sur RADIUS
+                                if ($passDiff && $tur['routers'] == 'radius') {
+                                    require_once 'system/devices/Radius.php';
+                                    $radius = new Radius();
+                                    $radius->upsertCustomer($username, 'Cleartext-Password', $password);
+                                }
                             } else {
                                 new Exception(Lang::T("Devices Not Found"));
                             }
@@ -912,7 +920,7 @@ switch ($action) {
         $ui->assign('order', $order);
         $ui->assign('order_pos', $order_pos[$order]);
         $ui->assign('orderby', $orderby);
-        $ui->assign('csrf_token',  Csrf::generateAndStoreToken());
+        $ui->assign('csrf_token', Csrf::generateAndStoreToken());
         $ui->display('admin/customers/list.tpl');
         break;
 }

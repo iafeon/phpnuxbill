@@ -56,6 +56,13 @@ switch ($action) {
                                 new Exception(Lang::T("Devices Not Found"));
                             }
                         }
+
+                        // Fix permanent: Mettre à jour radcheck si RADIUS
+                        if ($tur['routers'] == 'radius') {
+                            require_once 'system/devices/Radius.php';
+                            $radius = new Radius();
+                            $radius->upsertCustomer($user['username'], 'Cleartext-Password', $npass);
+                        }
                     }
                 }
                 $user->save();
@@ -140,7 +147,8 @@ switch ($action) {
                         }
                         $user->photo = '/photos/' . $subfolder . '/' . $hash . '.jpg';
                     }
-                    if (file_exists($_FILES['photo']['tmp_name'])) unlink($_FILES['photo']['tmp_name']);
+                    if (file_exists($_FILES['photo']['tmp_name']))
+                        unlink($_FILES['photo']['tmp_name']);
                 } else {
                     r2(getUrl('settings/app'), 'e', 'PHP GD is not installed');
                 }
@@ -161,7 +169,7 @@ switch ($action) {
 
             _log('[' . $user['username'] . ']: ' . Lang::T('User Updated Successfully'), 'User', $user['id']);
             r2(getUrl('accounts/profile'), 's', Lang::T('User Updated Successfully'));
-        }else{
+        } else {
             r2(getUrl('accounts/profile'), 'e', $msg);
         }
         break;

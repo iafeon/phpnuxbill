@@ -345,14 +345,14 @@ try {
             // Utiliser acctsessionid pour trouver la bonne session
             $acctSessionId = _post('Acct-Session-Id') ?: _post('acctSessionId') ?: '';
             $d = null;
-
+            
             // D'abord chercher par session ID (plus précis)
             if (!empty($acctSessionId)) {
                 $d = ORM::for_table('rad_acct')
                     ->whereRaw("BINARY username = '$username' AND acctsessionid = '" . $acctSessionId . "'")
                     ->findOne();
             }
-
+            
             // Si pas trouvé, chercher la session active (Start) pour ce username/mac/nas
             if (!$d) {
                 $d = ORM::for_table('rad_acct')
@@ -360,7 +360,7 @@ try {
                     ->order_by_desc('dateAdded')
                     ->findOne();
             }
-
+            
             // Si toujours pas trouvé, chercher la dernière session (peut être Stop)
             if (!$d) {
                 $d = ORM::for_table('rad_acct')
@@ -368,7 +368,7 @@ try {
                     ->order_by_desc('dateAdded')
                     ->findOne();
             }
-
+            
             if (!$d) {
                 $d = ORM::for_table('rad_acct')->create();
             }
@@ -376,14 +376,14 @@ try {
             file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - ACCOUNTING: username=$username\n", FILE_APPEND);
             file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - POST data: " . print_r($_POST, true) . "\n", FILE_APPEND);
             file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - REQUEST data: " . print_r($_REQUEST, true) . "\n", FILE_APPEND);
-
+            
             // Essayer plusieurs formats de noms de champs (rlm_rest peut envoyer différents formats)
             // rlm_rest peut envoyer en JSON ou en POST standard avec différents formats de noms
             $acctOutputOctets = 0;
             $acctInputOctets = 0;
             $acctSessionTime = 0;
             $acctStatusType = '';
-
+            
             // Essayer tous les formats possibles pour Output Octets
             $possibleOutputNames = ['Acct-Output-Octets', 'acctOutputOctets', 'AcctOutputOctets', 'output-octets', 'outputOctets', 'Acct-Output-Octets', 'AcctOutputOctets'];
             foreach ($possibleOutputNames as $name) {
@@ -394,7 +394,7 @@ try {
                     break;
                 }
             }
-
+            
             // Essayer tous les formats possibles pour Input Octets
             $possibleInputNames = ['Acct-Input-Octets', 'acctInputOctets', 'AcctInputOctets', 'input-octets', 'inputOctets', 'Acct-Input-Octets', 'AcctInputOctets'];
             foreach ($possibleInputNames as $name) {
@@ -405,7 +405,7 @@ try {
                     break;
                 }
             }
-
+            
             // Essayer tous les formats possibles pour Session Time
             $possibleTimeNames = ['Acct-Session-Time', 'acctSessionTime', 'AcctSessionTime', 'session-time', 'sessionTime'];
             foreach ($possibleTimeNames as $name) {
@@ -415,7 +415,7 @@ try {
                     break;
                 }
             }
-
+            
             // Essayer tous les formats possibles pour Status Type
             $possibleStatusNames = ['Acct-Status-Type', 'acctStatusType', 'AcctStatusType', 'status-type', 'statusType'];
             foreach ($possibleStatusNames as $name) {
@@ -425,14 +425,14 @@ try {
                     break;
                 }
             }
-
+            
             // Convertir en int
             $acctOutputOctets = intval($acctOutputOctets);
             $acctInputOctets = intval($acctInputOctets);
             $acctSessionTime = intval($acctSessionTime);
-
+            
             file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - Parsed: OutputOctets=$acctOutputOctets, InputOctets=$acctInputOctets, SessionTime=$acctSessionTime, StatusType=$acctStatusType\n", FILE_APPEND);
-
+            
             // Gérer les octets - TOUJOURS mettre à jour si les valeurs sont > 0 ou si c'est un Interim-Update
             // Pour Interim-Update/Alive, les valeurs sont cumulatives depuis le début de la session
             // Pour Start, on initialise, pour Stop, on additionne
@@ -450,10 +450,8 @@ try {
                 file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - Initialized octets from Start: Output=$acctOutputOctets, Input=$acctInputOctets\n", FILE_APPEND);
             } else if ($acctStatusType == 'Stop') {
                 // Stop: additionner (ou remplacer si c'est la valeur finale)
-                if (!isset($d->acctOutputOctets) || $d->acctOutputOctets === null)
-                    $d->acctOutputOctets = 0;
-                if (!isset($d->acctInputOctets) || $d->acctInputOctets === null)
-                    $d->acctInputOctets = 0;
+                if (!isset($d->acctOutputOctets) || $d->acctOutputOctets === null) $d->acctOutputOctets = 0;
+                if (!isset($d->acctInputOctets) || $d->acctInputOctets === null) $d->acctInputOctets = 0;
                 // Pour Stop, les valeurs sont généralement cumulatives, donc on les remplace
                 if ($acctOutputOctets > 0 || $acctInputOctets > 0) {
                     $d->acctOutputOctets = $acctOutputOctets;
@@ -463,10 +461,8 @@ try {
             } else {
                 // Autres cas: mettre à jour si les valeurs sont > 0
                 if ($acctOutputOctets > 0 || $acctInputOctets > 0) {
-                    if (!isset($d->acctOutputOctets) || $d->acctOutputOctets === null)
-                        $d->acctOutputOctets = 0;
-                    if (!isset($d->acctInputOctets) || $d->acctInputOctets === null)
-                        $d->acctInputOctets = 0;
+                    if (!isset($d->acctOutputOctets) || $d->acctOutputOctets === null) $d->acctOutputOctets = 0;
+                    if (!isset($d->acctInputOctets) || $d->acctInputOctets === null) $d->acctInputOctets = 0;
                     // Si les nouvelles valeurs sont supérieures, les utiliser (probablement cumulatives)
                     if ($acctOutputOctets >= $d->acctOutputOctets) {
                         $d->acctOutputOctets = $acctOutputOctets;
@@ -477,18 +473,16 @@ try {
                     file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - Updated octets (other): Output=$acctOutputOctets, Input=$acctInputOctets\n", FILE_APPEND);
                 }
             }
-
+            
             // Initialiser à 0 si pas encore défini
-            if (!isset($d->acctOutputOctets) || $d->acctOutputOctets === null)
-                $d->acctOutputOctets = 0;
-            if (!isset($d->acctInputOctets) || $d->acctInputOctets === null)
-                $d->acctInputOctets = 0;
-
+            if (!isset($d->acctOutputOctets) || $d->acctOutputOctets === null) $d->acctOutputOctets = 0;
+            if (!isset($d->acctInputOctets) || $d->acctInputOctets === null) $d->acctInputOctets = 0;
+            
             $d->acctsessionid = _post('Acct-Session-Id') ?: _post('acctSessionId');
             $d->username = $username;
             $d->realm = _post('realm');
             $d->nasipaddress = _post('NAS-IP-Address') ?: _post('nasIpAddress');
-
+            
             // Gérer le temps de session
             // Acct-Session-Time est le temps total depuis le début de la session (en secondes)
             if ($acctSessionTime !== false && $acctSessionTime !== '' && intval($acctSessionTime) > 0) {
@@ -500,10 +494,9 @@ try {
                 $d->acctsessiontime = max(0, $currentTime - $startTime);
             } else {
                 // Par défaut, 0
-                if (!isset($d->acctsessiontime) || $d->acctsessiontime === null)
-                    $d->acctsessiontime = 0;
+                if (!isset($d->acctsessiontime) || $d->acctsessiontime === null) $d->acctsessiontime = 0;
             }
-
+            
             file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - Final values: SessionTime=" . $d->acctsessiontime . ", OutputOctets=" . $d->acctOutputOctets . ", InputOctets=" . $d->acctInputOctets . "\n", FILE_APPEND);
             $d->nasid = $nasid;
             $d->nasportid = _post('NAS-Port-Id') ?: _post('nasPortId');
@@ -518,7 +511,7 @@ try {
             if (!$d->id || empty($d->dateAdded)) {
                 $d->dateAdded = date('Y-m-d H:i:s');
             }
-
+            
             // Toujours mettre à jour le temps de session même si Acct-Session-Time n'est pas fourni
             // Calculer depuis dateAdded si nécessaire
             if (($d->acctsessiontime == 0 || $d->acctsessiontime === null) && isset($d->dateAdded) && !empty($d->dateAdded)) {
@@ -530,7 +523,7 @@ try {
                     file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - Calculated session time from dateAdded: $calculatedTime seconds\n", FILE_APPEND);
                 }
             }
-
+            
             // pastikan data akunting yang disimpan memang customer aktif phpnuxbill
             $tur = ORM::for_table('tbl_user_recharges')->whereRaw("BINARY username = '$username' AND `status` = 'on' AND `routers` = 'radius'")->find_one();
             if (!$tur) {
@@ -541,12 +534,12 @@ try {
                     $tur = ORM::for_table('tbl_user_recharges')->whereRaw("BINARY username = '$username'")->find_one();
                 }
             }
-
+            
             // TOUJOURS sauvegarder les données d'accounting, même sans tbl_user_recharges
             // Cela permet de voir toutes les sessions actives dans radon_users
             $d->save();
             file_put_contents("/tmp/radius_debug_accounting.log", date("Y-m-d H:i:s") . " - Data saved: SessionTime=" . $d->acctsessiontime . ", OutputOctets=" . $d->acctOutputOctets . ", InputOctets=" . $d->acctInputOctets . ", StatusType=$acctStatusType\n", FILE_APPEND);
-
+            
             if ($tur) {
                 $acctStatusType = _post('Acct-Status-Type') ?: _post('acctStatusType');
                 if ($acctStatusType == 'Start') {
@@ -574,15 +567,15 @@ try {
 } catch (Throwable $e) {
     Message::sendTelegram(
         "Sistem Error.\n" .
-        $e->getMessage() . "\n" .
-        $e->getTraceAsString()
+            $e->getMessage() . "\n" .
+            $e->getTraceAsString()
     );
     show_radius_result(['Reply-Message' => 'Command Failed : ' . $action], 401);
 } catch (Exception $e) {
     Message::sendTelegram(
         "Sistem Error.\n" .
-        $e->getMessage() . "\n" .
-        $e->getTraceAsString()
+            $e->getMessage() . "\n" .
+            $e->getTraceAsString()
     );
     show_radius_result(['Reply-Message' => 'Command Failed : ' . $action], 401);
 }
@@ -643,8 +636,8 @@ function process_radiust_rest($tur, $code, $add_auth_type = true)
     // Simultaneous-Use and Port-Limit attributes for Mikrotik session limiting
     // Port-Limit is the standard RADIUS attribute (RFC 2869) for limiting concurrent sessions
     if ($plan['shared_users'] > 0) {
-        $attrs['reply:Port-Limit'] = (int) $plan['shared_users'];
-        $attrs['Simultaneous-Use'] = (int) $plan['shared_users'];
+        $attrs['reply:Port-Limit'] = (int)$plan['shared_users'];
+        $attrs['Simultaneous-Use'] = (int)$plan['shared_users'];
     }
     $attrs['reply:Mikrotik-Wireless-Comment'] = $plan['name_plan'] . ' | ' . $tur['expiration'] . ' ' . $tur['time'];
 
@@ -654,11 +647,7 @@ function process_radiust_rest($tur, $code, $add_auth_type = true)
     $attrs['reply:WISPr-Bandwidth-Max-Up'] = str_replace('M', '000000', str_replace('K', '000', $rates[0]));
     $attrs['reply:WISPr-Bandwidth-Max-Down'] = str_replace('M', '000000', str_replace('K', '000', $rates[1]));
     $attrs['reply:expiration'] = date('d M Y H:i:s', $timeexp);
-    // Pour Time_Limit, on veut la durée de session, pas une date absolue
-    // WISPr-Session-Terminate-Time serait mal interprété par Mikrotik
-    if ($plan['limit_type'] != 'Time_Limit' && $plan['limit_type'] != 'Both_Limit') {
-        $attrs['reply:WISPr-Session-Terminate-Time'] = date('Y-m-d', $timeexp) . 'T' . date('H:i:sP', $timeexp);
-    }
+    $attrs['reply:WISPr-Session-Terminate-Time'] = date('Y-m-d', $timeexp) . 'T' . date('H:i:sP', $timeexp);
     file_put_contents("/tmp/radius_debug_authorize.log", date("Y-m-d H:i:s") . " - process_radiust_rest: Basic attributes added, count=" . count($attrs) . "\n", FILE_APPEND);
 
     if ($plan['type'] == 'PPPOE') {
@@ -681,7 +670,6 @@ function process_radiust_rest($tur, $code, $add_auth_type = true)
             else
                 $timelimit = $plan['time_limit'] * 60;
             $attrs['reply:Max-All-Session'] = $timelimit;
-            $attrs['reply:Session-Timeout'] = $timelimit; // Attribut RADIUS standard pour Mikrotik
             $attrs['reply:Expire-After'] = $timelimit;
         } else if ($plan['limit_type'] == "Data_Limit") {
             if ($plan['data_unit'] == 'GB')
@@ -733,7 +721,7 @@ function show_radius_result($array, $code = 200)
         header("HTTP/1.1 204 No Content");
         die();
     }
-
+    
     // Convertir le format plat en format imbriqué attendu par rlm_rest
     // Format attendu: {"key": {"type": "string", "value": ["value"]}}
     $result = [];
@@ -767,7 +755,7 @@ function show_radius_result($array, $code = 200)
             ];
         }
     }
-
+    
     // Si le résultat est vide, retourner un objet vide {} au lieu d'un tableau vide []
     if (empty($result)) {
         $json_response = '{}';

@@ -588,5 +588,9 @@
     "Continue_the_process_of_sending_messages": "Continue the process of sending messages",
     "Message_Sent_Successfully": "Message Sent Successfully",
     "Clean_Logs": "Clean Logs",
-    "Clear_old_logs_": "Clear old logs?"
+    "Clear_old_logs_": "Clear old logs?",
+    "Failed_Login": "Failed Login",
+    "danger": "danger",
+    "You_are_already_logged_in": "You are already logged in",
+    "Cron_has_not_run_for_over_1_hour__Please_check_your_setup_": "Cron has not run for over 1 hour. Please check your setup."
 }

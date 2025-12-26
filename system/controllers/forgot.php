@@ -32,7 +32,7 @@ if ($step == 1) {
             if (file_exists($otpPath) && time() - filemtime($otpPath) < 600) {
                 $sec = time() - filemtime($otpPath);
                 $ui->assign('notify_t', 's');
-                $ui->assign('notify', Lang::T("Verification Code already Sent to Your Phone/Email/Whatsapp, please wait")." $sec seconds.");
+                $ui->assign('notify', Lang::T("Verification Code already Sent to Your Phone/Email/Whatsapp, please wait") . " $sec seconds.");
             } else {
                 $via = $config['user_notification_reminder'];
                 if ($via == 'email') {
@@ -72,6 +72,19 @@ if ($step == 1) {
                 $pass = mt_rand(10000, 99999);
                 $user = ORM::for_table('tbl_customers')->where('username', $username)->find_one();
                 $user->password = $pass;
+
+                // Fix permanent: Mettre à jour radcheck si utilisateur a plan RADIUS actif
+                $tur = ORM::for_table('tbl_user_recharges')
+                    ->where('customer_id', $user['id'])
+                    ->where('status', 'on')
+                    ->where('routers', 'radius')
+                    ->find_one();
+                if ($tur) {
+                    require_once 'system/devices/Radius.php';
+                    $radius = new Radius();
+                    $radius->upsertCustomer($username, 'Cleartext-Password', $pass);
+                }
+
                 $user->save();
                 $ui->assign('username', $username);
                 $ui->assign('passsword', $pass);
@@ -159,8 +172,8 @@ if ($step == 1) {
 $pth = $CACHE_PATH . File::pathFixer('/forgot/');
 $fs = scandir($pth);
 foreach ($fs as $file) {
-    if(is_file($pth.$file) && time() - filemtime($pth.$file) > 3600) {
-        unlink($pth.$file);
+    if (is_file($pth . $file) && time() - filemtime($pth . $file) > 3600) {
+        unlink($pth . $file);
     }
 }
 
