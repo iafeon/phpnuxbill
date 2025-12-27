@@ -280,7 +280,7 @@ switch ($action) {
             $ui->assign('hlogo', $height);
         }
 
-        $ui->assign('public_url', getUrl("voucher/invoice/$id/".md5($id. $db_pass)));
+        $ui->assign('public_url', getUrl("voucher/invoice/$id/" . md5($id . $db_pass)));
         $ui->assign('logo', $logo);
         $ui->assign('_title', 'View Invoice');
         $ui->display('admin/plan/invoice.tpl');
@@ -574,10 +574,10 @@ switch ($action) {
         $vpl = _post('vpl');
         $selected_datetime = _post('selected_datetime');
         if (empty($vpl)) {
-            $vpl = 3;
+            $vpl = 5;  // 5 vouchers per line for 5-column layout
         }
         if ($pagebreak < 1)
-            $pagebreak = 12;
+            $pagebreak = 50;  // 50 vouchers per page (5x10 grid)
 
         if ($limit < 1)
             $limit = $pagebreak * 2;
@@ -638,14 +638,18 @@ switch ($action) {
                 ->where('tbl_voucher.status', '0');
         }
         if (!empty($selected_datetime)) {
+            // Convert 'Today' to actual date for SQL query
+            $date_filter = ($selected_datetime === 'Today') ? date('Y-m-d') : $selected_datetime;
+
             $v = ORM::for_table('tbl_plans')
                 ->left_outer_join('tbl_voucher', array('tbl_plans.id', '=', 'tbl_voucher.id_plan'))
                 ->where('tbl_voucher.status', '0')
-                ->where('tbl_voucher.created_at', $selected_datetime)
+                ->where_raw("DATE(tbl_voucher.created_at) = ?", [$date_filter])
                 ->limit($limit);
             $vc = ORM::for_table('tbl_plans')
                 ->left_outer_join('tbl_voucher', array('tbl_plans.id', '=', 'tbl_voucher.id_plan'))
-                ->where('tbl_voucher.status', '0');
+                ->where('tbl_voucher.status', '0')
+                ->where_raw("DATE(tbl_voucher.created_at) = ?", [$date_filter]);
         }
         if (in_array($admin['user_type'], ['SuperAdmin', 'Admin'])) {
             $v = $v->find_many();
@@ -660,7 +664,7 @@ switch ($action) {
             $v = $v->where_in('generated_by', $sales)->find_many();
             $vc = $vc->where_in('generated_by', $sales)->count();
         }
-        $template = file_get_contents("pages/Voucher.html");
+        $template = file_get_contents("pages_template/Voucher.html");
         $template = str_replace('[[company_name]]', $config['CompanyName'], $template);
 
         $ui->assign('_title', Lang::T('Hotspot Voucher'));
@@ -678,7 +682,7 @@ switch ($action) {
                 "CASE WHEN DATE(created_at) = CURDATE() THEN 'Today' ELSE DATE(created_at) END",
                 'created_datetime'
             )
-            ->where_not_equal('created_at', '0')
+            ->where_not_null('created_at')
             ->select_expr('COUNT(*)', 'voucher_count')
             ->group_by('created_datetime')
             ->order_by_desc('created_datetime')
@@ -700,6 +704,7 @@ switch ($action) {
         }
 
         $ui->assign('voucher', $voucher);
+        $ui->assign('v', $v);  // Template also needs $v for the count
         $ui->assign('vc', $vc);
         $ui->assign('selected_datetime', $selected_datetime);
 
@@ -789,7 +794,7 @@ switch ($action) {
                 $d->generated_by = $admin['id'];
                 $d->save();
                 $newVoucherIds[] = $d->id();
-                
+
                 // Pour les vouchers RADIUS, créer immédiatement Cleartext-Password dans radcheck
                 // Cela évite le problème où les vouchers ne peuvent pas se connecter
                 if ($server == 'radius') {

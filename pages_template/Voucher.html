@@ -1,27 +1,33 @@
-<table border="0" cellspacing="0" cellpadding="2">
-    <tr>
-        <td valign="middle">
-            <center><strong style="font-size:38px">[[company_name]]</strong></center>
-            <table width="100%" border="1" cellspacing="0" cellpadding="1" bordercolor="#757575">
-                <tbody>
-                    <tr>
-                        <td rowspan="4" width="1">[[qrcode]]
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="middle" align="center" style="font-size:25px">
-                            [[price]]</td>
-                    </tr>
-                    <tr>
-                        <td valign="middle" align="center" style="font-size:20px">
-                            [[voucher_code]]</td>
-                    </tr>
-                    <tr>
-                        <td valign="middle" align="center" style="font-size:15px">
-                            [[plan]]</td>
-                    </tr>
-                </tbody>
-            </table>
+<table border="1" cellspacing="0" cellpadding="2" style="border-collapse: collapse; width: 100%; max-width: 210px; font-family: Arial, sans-serif; font-size: 9px;">
+    <tbody><tr>
+        <td style="border: 2px solid #000; padding: 2px 4px;">
+            <!-- Header with Logo and Counter -->
+            
+                style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+                <img src="ui/ui/images/logo.png" alt="Logo" style="height: 20px; width: auto;">
+                <span style="font-size: 10px; font-weight: bold; border: 1px solid #000; padding: 1px 4px;">[[[counter]]]</span>
+            
+
+            <!-- Voucher Code Label -->
+             style="text-align: center; font-size: 8px; margin-bottom: 2px;">
+                Code d'accès TEST
+            
+
+            <!-- Voucher Code Box -->
+            
+                style="border: 1px solid #000; padding: 3px; text-align: center; margin-bottom: 3px; background-color: #fff;">
+                <strong style="font-size: 12px; letter-spacing: 0.3px;">[[voucher_code]]</strong>
+            
+
+            <!-- Duration and Price -->
+             style="text-align: center; font-size: 9px; font-weight: bold; margin-bottom: 2px; line-height: 1.2;">
+                [[plan]]
+            
+
+            <!-- Login URL -->
+             style="text-align: center; font-size: 7px; font-weight: bold;">
+                Login: http://wifi.zosoft.net
+            
         </td>
     </tr>
-</table>
+</tbody></table>

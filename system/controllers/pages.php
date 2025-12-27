@@ -78,7 +78,18 @@ if (strpos($action, "-reset") !== false) {
                     file_put_contents("$PAGES_PATH/vouchers/" . _post('template_name') . '.html', $html);
                 }
             }
-            r2(getUrl('pages/') . $action, 's', Lang::T("Saving page success"));
+
+            // Auto-sync Voucher.html to pages_template for print template
+            if ($action == 'Voucher') {
+                $template_path = "pages_template/" . str_replace(".", "", $action) . ".html";
+                if (copy($path, $template_path)) {
+                    r2(getUrl('pages/') . $action, 's', Lang::T("Saving page success") . " - Template synchronized for printing");
+                } else {
+                    r2(getUrl('pages/') . $action, 's', Lang::T("Saving page success") . " - Warning: Template sync failed");
+                }
+            } else {
+                r2(getUrl('pages/') . $action, 's', Lang::T("Saving page success"));
+            }
         } else {
             r2(getUrl('pages/') . $action, 'e', Lang::T("Failed to save page, make sure i can write to folder pages, <i>chmod 664 pages/*.html<i>"));
         }

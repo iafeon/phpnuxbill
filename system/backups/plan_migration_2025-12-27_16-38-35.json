@@ -1,0 +1,2077 @@
+{
+    "timestamp": "2025-12-27_16-38-35",
+    "user_recharges": [
+        {
+            "id": 1,
+            "username": "tsilavina",
+            "namebp": "premium_no_tv",
+            "status": "off"
+        },
+        {
+            "id": 2,
+            "username": "ekar",
+            "namebp": "premium",
+            "status": "on"
+        },
+        {
+            "id": 3,
+            "username": "hasina",
+            "namebp": "collab",
+            "status": "on"
+        },
+        {
+            "id": 4,
+            "username": "julio",
+            "namebp": "premium_no_tv",
+            "status": "on"
+        },
+        {
+            "id": 5,
+            "username": "lova",
+            "namebp": "premium_no_tv",
+            "status": "on"
+        },
+        {
+            "id": 6,
+            "username": "ralobo",
+            "namebp": "premium",
+            "status": "on"
+        },
+        {
+            "id": 7,
+            "username": "tsanta",
+            "namebp": "premium",
+            "status": "on"
+        },
+        {
+            "id": 8,
+            "username": "senyla",
+            "namebp": "premium_no_tv",
+            "status": "on"
+        },
+        {
+            "id": 9,
+            "username": "tsirarana",
+            "namebp": "premium",
+            "status": "on"
+        },
+        {
+            "id": 10,
+            "username": "rogin",
+            "namebp": "premium",
+            "status": "on"
+        },
+        {
+            "id": 11,
+            "username": "ioly",
+            "namebp": "premium_no_tv",
+            "status": "on"
+        },
+        {
+            "id": 12,
+            "username": "patric",
+            "namebp": "premium_plus",
+            "status": "on"
+        },
+        {
+            "id": 13,
+            "username": "tech",
+            "namebp": "collab",
+            "status": "on"
+        },
+        {
+            "id": 14,
+            "username": "layau",
+            "namebp": "gratuit",
+            "status": "off"
+        },
+        {
+            "id": 15,
+            "username": "tsiory",
+            "namebp": "collab",
+            "status": "on"
+        },
+        {
+            "id": 16,
+            "username": "thimond",
+            "namebp": "gratuit",
+            "status": "off"
+        },
+        {
+            "id": 325,
+            "username": "chrd3a",
+            "namebp": "premium",
+            "status": "off"
+        },
+        {
+            "id": 327,
+            "username": "lebazol",
+            "namebp": "premium",
+            "status": "on"
+        },
+        {
+            "id": 349,
+            "username": "zf02021103",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 350,
+            "username": "zf78138",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 351,
+            "username": "zf239718971167",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 352,
+            "username": "peloton",
+            "namebp": "premium_plus",
+            "status": "on"
+        },
+        {
+            "id": 353,
+            "username": "bl872189",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 354,
+            "username": "bl272068",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 355,
+            "username": "rg782420",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 356,
+            "username": "rg341220",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 357,
+            "username": "rg475699",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 358,
+            "username": "rg580429",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 359,
+            "username": "rg469878",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 360,
+            "username": "bl230370",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 361,
+            "username": "rg572981",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 362,
+            "username": "rg146586",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 363,
+            "username": "rg665037",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 364,
+            "username": "bl670524",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 365,
+            "username": "bl437556",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 366,
+            "username": "bl223470",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 367,
+            "username": "bl641203",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 368,
+            "username": "rg910647",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 369,
+            "username": "rg093024",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 370,
+            "username": "rg465275",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 371,
+            "username": "rg255307",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 372,
+            "username": "bl864765",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 373,
+            "username": "rg295930",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 374,
+            "username": "bl942424",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 375,
+            "username": "bl336263",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 376,
+            "username": "bl837815",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 377,
+            "username": "rg286952",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 378,
+            "username": "bl571579",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 379,
+            "username": "bl364662",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 380,
+            "username": "bl232382",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 381,
+            "username": "bl761598",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 382,
+            "username": "bl112260",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 383,
+            "username": "zf991789",
+            "namebp": "gratiut",
+            "status": "off"
+        },
+        {
+            "id": 384,
+            "username": "zf975541",
+            "namebp": "gratiut",
+            "status": "off"
+        },
+        {
+            "id": 385,
+            "username": "bl905077",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 386,
+            "username": "zf84512",
+            "namebp": "gratiut",
+            "status": "off"
+        },
+        {
+            "id": 387,
+            "username": "bl629582",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 388,
+            "username": "bl607566",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 389,
+            "username": "bl472422",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 390,
+            "username": "rg806289",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 391,
+            "username": "rg063157",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 392,
+            "username": "bl643375",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 393,
+            "username": "bl964736",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 394,
+            "username": "rg739579",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 395,
+            "username": "bl051525",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 396,
+            "username": "rg342250",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 397,
+            "username": "zf957975346539",
+            "namebp": "standard_reseller",
+            "status": "off"
+        },
+        {
+            "id": 398,
+            "username": "bl788974",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 399,
+            "username": "bl983571",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 400,
+            "username": "bl450316",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 401,
+            "username": "zf57672",
+            "namebp": "standard_reseller",
+            "status": "off"
+        },
+        {
+            "id": 402,
+            "username": "rg401791",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 403,
+            "username": "bl073183",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 404,
+            "username": "bl347882",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 405,
+            "username": "bl474554",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 406,
+            "username": "rg117542",
+            "namebp": "basic_reseller",
+            "status": "off"
+        },
+        {
+            "id": 407,
+            "username": "rg703482",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 408,
+            "username": "rg609377",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 409,
+            "username": "rg968873",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 410,
+            "username": "rg113066",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 411,
+            "username": "zf00050",
+            "namebp": "standard_reseller",
+            "status": "on"
+        },
+        {
+            "id": 412,
+            "username": "zf80448",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 413,
+            "username": "zf71791",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 414,
+            "username": "rg009649",
+            "namebp": "basic_reseller",
+            "status": "on"
+        },
+        {
+            "id": 415,
+            "username": "rg000916",
+            "namebp": "basic_reseller",
+            "status": "on"
+        }
+    ],
+    "vouchers": [
+        {
+            "id": 6,
+            "code": "bl668576",
+            "routers": "radius"
+        },
+        {
+            "id": 7,
+            "code": "bl097200",
+            "routers": "radius"
+        },
+        {
+            "id": 8,
+            "code": "bl423515",
+            "routers": "radius"
+        },
+        {
+            "id": 9,
+            "code": "bl152107",
+            "routers": "radius"
+        },
+        {
+            "id": 10,
+            "code": "bl751320",
+            "routers": "radius"
+        },
+        {
+            "id": 11,
+            "code": "bl511872",
+            "routers": "radius"
+        },
+        {
+            "id": 12,
+            "code": "bl464037",
+            "routers": "radius"
+        },
+        {
+            "id": 13,
+            "code": "bl883320",
+            "routers": "radius"
+        },
+        {
+            "id": 14,
+            "code": "bl632329",
+            "routers": "radius"
+        },
+        {
+            "id": 15,
+            "code": "bl078570",
+            "routers": "radius"
+        },
+        {
+            "id": 16,
+            "code": "bl989575",
+            "routers": "radius"
+        },
+        {
+            "id": 17,
+            "code": "bl216475",
+            "routers": "radius"
+        },
+        {
+            "id": 18,
+            "code": "bl433065",
+            "routers": "radius"
+        },
+        {
+            "id": 19,
+            "code": "bl397317",
+            "routers": "radius"
+        },
+        {
+            "id": 20,
+            "code": "bl711663",
+            "routers": "radius"
+        },
+        {
+            "id": 21,
+            "code": "bl886691",
+            "routers": "radius"
+        },
+        {
+            "id": 22,
+            "code": "bl168537",
+            "routers": "radius"
+        },
+        {
+            "id": 23,
+            "code": "bl504839",
+            "routers": "radius"
+        },
+        {
+            "id": 24,
+            "code": "bl688416",
+            "routers": "radius"
+        },
+        {
+            "id": 25,
+            "code": "bl792396",
+            "routers": "radius"
+        },
+        {
+            "id": 26,
+            "code": "bl539843",
+            "routers": "radius"
+        },
+        {
+            "id": 27,
+            "code": "bl913057",
+            "routers": "radius"
+        },
+        {
+            "id": 28,
+            "code": "bl703710",
+            "routers": "radius"
+        },
+        {
+            "id": 29,
+            "code": "bl650965",
+            "routers": "radius"
+        },
+        {
+            "id": 30,
+            "code": "bl902212",
+            "routers": "radius"
+        },
+        {
+            "id": 31,
+            "code": "bl926181",
+            "routers": "radius"
+        },
+        {
+            "id": 32,
+            "code": "bl864197",
+            "routers": "radius"
+        },
+        {
+            "id": 33,
+            "code": "bl247165",
+            "routers": "radius"
+        },
+        {
+            "id": 34,
+            "code": "bl148072",
+            "routers": "radius"
+        },
+        {
+            "id": 35,
+            "code": "bl016809",
+            "routers": "radius"
+        },
+        {
+            "id": 36,
+            "code": "bl194110",
+            "routers": "radius"
+        },
+        {
+            "id": 37,
+            "code": "bl726458",
+            "routers": "radius"
+        },
+        {
+            "id": 38,
+            "code": "bl771724",
+            "routers": "radius"
+        },
+        {
+            "id": 39,
+            "code": "bl752321",
+            "routers": "radius"
+        },
+        {
+            "id": 40,
+            "code": "bl924784",
+            "routers": "radius"
+        },
+        {
+            "id": 41,
+            "code": "bl531786",
+            "routers": "radius"
+        },
+        {
+            "id": 42,
+            "code": "bl529363",
+            "routers": "radius"
+        },
+        {
+            "id": 43,
+            "code": "bl714540",
+            "routers": "radius"
+        },
+        {
+            "id": 44,
+            "code": "bl962404",
+            "routers": "radius"
+        },
+        {
+            "id": 45,
+            "code": "bl872266",
+            "routers": "radius"
+        },
+        {
+            "id": 46,
+            "code": "bl406922",
+            "routers": "radius"
+        },
+        {
+            "id": 47,
+            "code": "bl338571",
+            "routers": "radius"
+        },
+        {
+            "id": 48,
+            "code": "bl940952",
+            "routers": "radius"
+        },
+        {
+            "id": 49,
+            "code": "bl064202",
+            "routers": "radius"
+        },
+        {
+            "id": 50,
+            "code": "bl847214",
+            "routers": "radius"
+        },
+        {
+            "id": 51,
+            "code": "bl500305",
+            "routers": "radius"
+        },
+        {
+            "id": 52,
+            "code": "bl271173",
+            "routers": "radius"
+        },
+        {
+            "id": 53,
+            "code": "bl903863",
+            "routers": "radius"
+        },
+        {
+            "id": 54,
+            "code": "bl109138",
+            "routers": "radius"
+        },
+        {
+            "id": 55,
+            "code": "bl721891",
+            "routers": "radius"
+        },
+        {
+            "id": 56,
+            "code": "bl804072",
+            "routers": "radius"
+        },
+        {
+            "id": 57,
+            "code": "bl770728",
+            "routers": "radius"
+        },
+        {
+            "id": 58,
+            "code": "bl463514",
+            "routers": "radius"
+        },
+        {
+            "id": 59,
+            "code": "bl667279",
+            "routers": "radius"
+        },
+        {
+            "id": 60,
+            "code": "bl537087",
+            "routers": "radius"
+        },
+        {
+            "id": 61,
+            "code": "bl797676",
+            "routers": "radius"
+        },
+        {
+            "id": 62,
+            "code": "bl195811",
+            "routers": "radius"
+        },
+        {
+            "id": 63,
+            "code": "bl347248",
+            "routers": "radius"
+        },
+        {
+            "id": 64,
+            "code": "bl276817",
+            "routers": "radius"
+        },
+        {
+            "id": 65,
+            "code": "bl011032",
+            "routers": "radius"
+        },
+        {
+            "id": 66,
+            "code": "bl885655",
+            "routers": "radius"
+        },
+        {
+            "id": 67,
+            "code": "bl305352",
+            "routers": "radius"
+        },
+        {
+            "id": 68,
+            "code": "bl594146",
+            "routers": "radius"
+        },
+        {
+            "id": 69,
+            "code": "bl572100",
+            "routers": "radius"
+        },
+        {
+            "id": 70,
+            "code": "bl014658",
+            "routers": "radius"
+        },
+        {
+            "id": 71,
+            "code": "bl504544",
+            "routers": "radius"
+        },
+        {
+            "id": 72,
+            "code": "bl115647",
+            "routers": "radius"
+        },
+        {
+            "id": 73,
+            "code": "bl755194",
+            "routers": "radius"
+        },
+        {
+            "id": 74,
+            "code": "bl178293",
+            "routers": "radius"
+        },
+        {
+            "id": 75,
+            "code": "bl217113",
+            "routers": "radius"
+        },
+        {
+            "id": 76,
+            "code": "bl496532",
+            "routers": "radius"
+        },
+        {
+            "id": 77,
+            "code": "bl969024",
+            "routers": "radius"
+        },
+        {
+            "id": 78,
+            "code": "bl601121",
+            "routers": "radius"
+        },
+        {
+            "id": 79,
+            "code": "bl675039",
+            "routers": "radius"
+        },
+        {
+            "id": 80,
+            "code": "bl666303",
+            "routers": "radius"
+        },
+        {
+            "id": 81,
+            "code": "bl833413",
+            "routers": "radius"
+        },
+        {
+            "id": 82,
+            "code": "bl030492",
+            "routers": "radius"
+        },
+        {
+            "id": 83,
+            "code": "bl680121",
+            "routers": "radius"
+        },
+        {
+            "id": 84,
+            "code": "bl536558",
+            "routers": "radius"
+        },
+        {
+            "id": 85,
+            "code": "bl278652",
+            "routers": "radius"
+        },
+        {
+            "id": 86,
+            "code": "bl962512",
+            "routers": "radius"
+        },
+        {
+            "id": 87,
+            "code": "bl031423",
+            "routers": "radius"
+        },
+        {
+            "id": 88,
+            "code": "bl398024",
+            "routers": "radius"
+        },
+        {
+            "id": 89,
+            "code": "bl743931",
+            "routers": "radius"
+        },
+        {
+            "id": 90,
+            "code": "bl247746",
+            "routers": "radius"
+        },
+        {
+            "id": 91,
+            "code": "bl200179",
+            "routers": "radius"
+        },
+        {
+            "id": 92,
+            "code": "bl670524",
+            "routers": "radius"
+        },
+        {
+            "id": 93,
+            "code": "bl155267",
+            "routers": "radius"
+        },
+        {
+            "id": 94,
+            "code": "bl795401",
+            "routers": "radius"
+        },
+        {
+            "id": 95,
+            "code": "bl230370",
+            "routers": "radius"
+        },
+        {
+            "id": 96,
+            "code": "bl272068",
+            "routers": "radius"
+        },
+        {
+            "id": 97,
+            "code": "bl872189",
+            "routers": "radius"
+        },
+        {
+            "id": 98,
+            "code": "bl013237",
+            "routers": "radius"
+        },
+        {
+            "id": 99,
+            "code": "bl437556",
+            "routers": "radius"
+        },
+        {
+            "id": 100,
+            "code": "bl336263",
+            "routers": "radius"
+        },
+        {
+            "id": 101,
+            "code": "bl051525",
+            "routers": "radius"
+        },
+        {
+            "id": 102,
+            "code": "bl983571",
+            "routers": "radius"
+        },
+        {
+            "id": 103,
+            "code": "bl347882",
+            "routers": "radius"
+        },
+        {
+            "id": 104,
+            "code": "bl641203",
+            "routers": "radius"
+        },
+        {
+            "id": 105,
+            "code": "bl761598",
+            "routers": "radius"
+        },
+        {
+            "id": 106,
+            "code": "bl643375",
+            "routers": "radius"
+        },
+        {
+            "id": 107,
+            "code": "bl450316",
+            "routers": "radius"
+        },
+        {
+            "id": 108,
+            "code": "bl474554",
+            "routers": "radius"
+        },
+        {
+            "id": 109,
+            "code": "bl223470",
+            "routers": "radius"
+        },
+        {
+            "id": 110,
+            "code": "bl472422",
+            "routers": "radius"
+        },
+        {
+            "id": 111,
+            "code": "bl629582",
+            "routers": "radius"
+        },
+        {
+            "id": 112,
+            "code": "bl788974",
+            "routers": "radius"
+        },
+        {
+            "id": 113,
+            "code": "bl073183",
+            "routers": "radius"
+        },
+        {
+            "id": 114,
+            "code": "bl864765",
+            "routers": "radius"
+        },
+        {
+            "id": 115,
+            "code": "bl964736",
+            "routers": "radius"
+        },
+        {
+            "id": 116,
+            "code": "bl607566",
+            "routers": "radius"
+        },
+        {
+            "id": 117,
+            "code": "bl905077",
+            "routers": "radius"
+        },
+        {
+            "id": 118,
+            "code": "bl364662",
+            "routers": "radius"
+        },
+        {
+            "id": 119,
+            "code": "bl837815",
+            "routers": "radius"
+        },
+        {
+            "id": 120,
+            "code": "bl942424",
+            "routers": "radius"
+        },
+        {
+            "id": 121,
+            "code": "bl571579",
+            "routers": "radius"
+        },
+        {
+            "id": 122,
+            "code": "bl232382",
+            "routers": "radius"
+        },
+        {
+            "id": 123,
+            "code": "bl112260",
+            "routers": "radius"
+        },
+        {
+            "id": 124,
+            "code": "bl445737",
+            "routers": "radius"
+        },
+        {
+            "id": 125,
+            "code": "bl164845",
+            "routers": "radius"
+        },
+        {
+            "id": 126,
+            "code": "bl733790",
+            "routers": "radius"
+        },
+        {
+            "id": 127,
+            "code": "bl659405",
+            "routers": "radius"
+        },
+        {
+            "id": 128,
+            "code": "bl849616",
+            "routers": "radius"
+        },
+        {
+            "id": 129,
+            "code": "bl627723",
+            "routers": "radius"
+        },
+        {
+            "id": 130,
+            "code": "bl590546",
+            "routers": "radius"
+        },
+        {
+            "id": 131,
+            "code": "bl609908",
+            "routers": "radius"
+        },
+        {
+            "id": 132,
+            "code": "bl967484",
+            "routers": "radius"
+        },
+        {
+            "id": 133,
+            "code": "bl682347",
+            "routers": "radius"
+        },
+        {
+            "id": 134,
+            "code": "bl319904",
+            "routers": "radius"
+        },
+        {
+            "id": 135,
+            "code": "bl396436",
+            "routers": "radius"
+        },
+        {
+            "id": 136,
+            "code": "bl127441",
+            "routers": "radius"
+        },
+        {
+            "id": 137,
+            "code": "bl833206",
+            "routers": "radius"
+        },
+        {
+            "id": 138,
+            "code": "bl794372",
+            "routers": "radius"
+        },
+        {
+            "id": 139,
+            "code": "bl666452",
+            "routers": "radius"
+        },
+        {
+            "id": 140,
+            "code": "bl563088",
+            "routers": "radius"
+        },
+        {
+            "id": 141,
+            "code": "bl760067",
+            "routers": "radius"
+        },
+        {
+            "id": 142,
+            "code": "bl716793",
+            "routers": "radius"
+        },
+        {
+            "id": 143,
+            "code": "bl651487",
+            "routers": "radius"
+        },
+        {
+            "id": 144,
+            "code": "bl082348",
+            "routers": "radius"
+        },
+        {
+            "id": 145,
+            "code": "bl530341",
+            "routers": "radius"
+        },
+        {
+            "id": 146,
+            "code": "bl076187",
+            "routers": "radius"
+        },
+        {
+            "id": 147,
+            "code": "bl276466",
+            "routers": "radius"
+        },
+        {
+            "id": 148,
+            "code": "bl370329",
+            "routers": "radius"
+        },
+        {
+            "id": 149,
+            "code": "bl440033",
+            "routers": "radius"
+        },
+        {
+            "id": 150,
+            "code": "bl693607",
+            "routers": "radius"
+        },
+        {
+            "id": 151,
+            "code": "bl415377",
+            "routers": "radius"
+        },
+        {
+            "id": 152,
+            "code": "bl993509",
+            "routers": "radius"
+        },
+        {
+            "id": 153,
+            "code": "bl659991",
+            "routers": "radius"
+        },
+        {
+            "id": 154,
+            "code": "bl504415",
+            "routers": "radius"
+        },
+        {
+            "id": 155,
+            "code": "bl480677",
+            "routers": "radius"
+        },
+        {
+            "id": 156,
+            "code": "bl103550",
+            "routers": "radius"
+        },
+        {
+            "id": 157,
+            "code": "bl503352",
+            "routers": "radius"
+        },
+        {
+            "id": 158,
+            "code": "bl884478",
+            "routers": "radius"
+        },
+        {
+            "id": 159,
+            "code": "bl631204",
+            "routers": "radius"
+        },
+        {
+            "id": 160,
+            "code": "bl454181",
+            "routers": "radius"
+        },
+        {
+            "id": 161,
+            "code": "bl417088",
+            "routers": "radius"
+        },
+        {
+            "id": 162,
+            "code": "bl848509",
+            "routers": "radius"
+        },
+        {
+            "id": 163,
+            "code": "bl394643",
+            "routers": "radius"
+        },
+        {
+            "id": 164,
+            "code": "bl300073",
+            "routers": "radius"
+        },
+        {
+            "id": 165,
+            "code": "bl711957",
+            "routers": "radius"
+        },
+        {
+            "id": 166,
+            "code": "bl283723",
+            "routers": "radius"
+        },
+        {
+            "id": 167,
+            "code": "bl784285",
+            "routers": "radius"
+        },
+        {
+            "id": 168,
+            "code": "bl239395",
+            "routers": "radius"
+        },
+        {
+            "id": 169,
+            "code": "bl576932",
+            "routers": "radius"
+        },
+        {
+            "id": 170,
+            "code": "bl249970",
+            "routers": "radius"
+        },
+        {
+            "id": 171,
+            "code": "bl817013",
+            "routers": "radius"
+        },
+        {
+            "id": 172,
+            "code": "bl003700",
+            "routers": "radius"
+        },
+        {
+            "id": 173,
+            "code": "bl437053",
+            "routers": "radius"
+        },
+        {
+            "id": 174,
+            "code": "bl760883",
+            "routers": "radius"
+        },
+        {
+            "id": 175,
+            "code": "bl618725",
+            "routers": "radius"
+        },
+        {
+            "id": 176,
+            "code": "bl796242",
+            "routers": "radius"
+        },
+        {
+            "id": 177,
+            "code": "bl332998",
+            "routers": "radius"
+        },
+        {
+            "id": 178,
+            "code": "bl193091",
+            "routers": "radius"
+        },
+        {
+            "id": 179,
+            "code": "bl646631",
+            "routers": "radius"
+        },
+        {
+            "id": 180,
+            "code": "bl429487",
+            "routers": "radius"
+        },
+        {
+            "id": 181,
+            "code": "bl363940",
+            "routers": "radius"
+        },
+        {
+            "id": 182,
+            "code": "bl053546",
+            "routers": "radius"
+        },
+        {
+            "id": 183,
+            "code": "bl881339",
+            "routers": "radius"
+        },
+        {
+            "id": 184,
+            "code": "bl313619",
+            "routers": "radius"
+        },
+        {
+            "id": 185,
+            "code": "bl424483",
+            "routers": "radius"
+        },
+        {
+            "id": 186,
+            "code": "bl910511",
+            "routers": "radius"
+        },
+        {
+            "id": 187,
+            "code": "bl625433",
+            "routers": "radius"
+        },
+        {
+            "id": 188,
+            "code": "bl191831",
+            "routers": "radius"
+        },
+        {
+            "id": 189,
+            "code": "bl735345",
+            "routers": "radius"
+        },
+        {
+            "id": 190,
+            "code": "bl564084",
+            "routers": "radius"
+        },
+        {
+            "id": 191,
+            "code": "bl646212",
+            "routers": "radius"
+        },
+        {
+            "id": 192,
+            "code": "bl392885",
+            "routers": "radius"
+        },
+        {
+            "id": 193,
+            "code": "bl593328",
+            "routers": "radius"
+        },
+        {
+            "id": 194,
+            "code": "bl655341",
+            "routers": "radius"
+        },
+        {
+            "id": 195,
+            "code": "bl470507",
+            "routers": "radius"
+        },
+        {
+            "id": 196,
+            "code": "bl453361",
+            "routers": "radius"
+        },
+        {
+            "id": 197,
+            "code": "bl570593",
+            "routers": "radius"
+        },
+        {
+            "id": 198,
+            "code": "bl152792",
+            "routers": "radius"
+        },
+        {
+            "id": 199,
+            "code": "bl785766",
+            "routers": "radius"
+        },
+        {
+            "id": 200,
+            "code": "bl965236",
+            "routers": "radius"
+        },
+        {
+            "id": 201,
+            "code": "bl213207",
+            "routers": "radius"
+        },
+        {
+            "id": 202,
+            "code": "bl823872",
+            "routers": "radius"
+        },
+        {
+            "id": 203,
+            "code": "bl742667",
+            "routers": "radius"
+        },
+        {
+            "id": 204,
+            "code": "bl547524",
+            "routers": "radius"
+        },
+        {
+            "id": 205,
+            "code": "bl883053",
+            "routers": "radius"
+        },
+        {
+            "id": 206,
+            "code": "bl935812",
+            "routers": "radius"
+        },
+        {
+            "id": 207,
+            "code": "bl567828",
+            "routers": "radius"
+        },
+        {
+            "id": 208,
+            "code": "bl472073",
+            "routers": "radius"
+        },
+        {
+            "id": 209,
+            "code": "bl101257",
+            "routers": "radius"
+        },
+        {
+            "id": 210,
+            "code": "bl566617",
+            "routers": "radius"
+        },
+        {
+            "id": 211,
+            "code": "bl255241",
+            "routers": "radius"
+        },
+        {
+            "id": 212,
+            "code": "bl840532",
+            "routers": "radius"
+        },
+        {
+            "id": 213,
+            "code": "bl470082",
+            "routers": "radius"
+        },
+        {
+            "id": 214,
+            "code": "bl996544",
+            "routers": "radius"
+        },
+        {
+            "id": 215,
+            "code": "bl037436",
+            "routers": "radius"
+        },
+        {
+            "id": 216,
+            "code": "bl194532",
+            "routers": "radius"
+        },
+        {
+            "id": 217,
+            "code": "bl467067",
+            "routers": "radius"
+        },
+        {
+            "id": 218,
+            "code": "bl180865",
+            "routers": "radius"
+        },
+        {
+            "id": 219,
+            "code": "bl613315",
+            "routers": "radius"
+        },
+        {
+            "id": 220,
+            "code": "bl515105",
+            "routers": "radius"
+        },
+        {
+            "id": 221,
+            "code": "bl852135",
+            "routers": "radius"
+        },
+        {
+            "id": 222,
+            "code": "bl857927",
+            "routers": "radius"
+        },
+        {
+            "id": 223,
+            "code": "bl165278",
+            "routers": "radius"
+        },
+        {
+            "id": 224,
+            "code": "bl969161",
+            "routers": "radius"
+        },
+        {
+            "id": 225,
+            "code": "bl113109",
+            "routers": "radius"
+        },
+        {
+            "id": 226,
+            "code": "bl393521",
+            "routers": "radius"
+        },
+        {
+            "id": 227,
+            "code": "bl688729",
+            "routers": "radius"
+        },
+        {
+            "id": 228,
+            "code": "bl080075",
+            "routers": "radius"
+        },
+        {
+            "id": 229,
+            "code": "bl530074",
+            "routers": "radius"
+        },
+        {
+            "id": 230,
+            "code": "bl635554",
+            "routers": "radius"
+        },
+        {
+            "id": 231,
+            "code": "bl847120",
+            "routers": "radius"
+        },
+        {
+            "id": 232,
+            "code": "bl751663",
+            "routers": "radius"
+        },
+        {
+            "id": 233,
+            "code": "bl998607",
+            "routers": "radius"
+        },
+        {
+            "id": 234,
+            "code": "bl042380",
+            "routers": "radius"
+        },
+        {
+            "id": 235,
+            "code": "bl310662",
+            "routers": "radius"
+        },
+        {
+            "id": 236,
+            "code": "bl857964",
+            "routers": "radius"
+        },
+        {
+            "id": 237,
+            "code": "bl390876",
+            "routers": "radius"
+        },
+        {
+            "id": 238,
+            "code": "bl661469",
+            "routers": "radius"
+        },
+        {
+            "id": 239,
+            "code": "bl761333",
+            "routers": "radius"
+        },
+        {
+            "id": 240,
+            "code": "bl833701",
+            "routers": "radius"
+        },
+        {
+            "id": 241,
+            "code": "bl905697",
+            "routers": "radius"
+        },
+        {
+            "id": 242,
+            "code": "bl259967",
+            "routers": "radius"
+        },
+        {
+            "id": 243,
+            "code": "bl390549",
+            "routers": "radius"
+        },
+        {
+            "id": 244,
+            "code": "rg147961",
+            "routers": "radius"
+        },
+        {
+            "id": 245,
+            "code": "rg083516",
+            "routers": "radius"
+        },
+        {
+            "id": 246,
+            "code": "rg421680",
+            "routers": "radius"
+        },
+        {
+            "id": 247,
+            "code": "rg601664",
+            "routers": "radius"
+        },
+        {
+            "id": 248,
+            "code": "rg600201",
+            "routers": "radius"
+        },
+        {
+            "id": 249,
+            "code": "rg970634",
+            "routers": "radius"
+        },
+        {
+            "id": 250,
+            "code": "rg558819",
+            "routers": "radius"
+        },
+        {
+            "id": 251,
+            "code": "rg215379",
+            "routers": "radius"
+        },
+        {
+            "id": 252,
+            "code": "rg498278",
+            "routers": "radius"
+        },
+        {
+            "id": 253,
+            "code": "rg708846",
+            "routers": "radius"
+        },
+        {
+            "id": 254,
+            "code": "rg484047",
+            "routers": "radius"
+        },
+        {
+            "id": 255,
+            "code": "rg896018",
+            "routers": "radius"
+        },
+        {
+            "id": 256,
+            "code": "rg358585",
+            "routers": "radius"
+        },
+        {
+            "id": 257,
+            "code": "rg259478",
+            "routers": "radius"
+        },
+        {
+            "id": 258,
+            "code": "rg651377",
+            "routers": "radius"
+        },
+        {
+            "id": 259,
+            "code": "rg412521",
+            "routers": "radius"
+        },
+        {
+            "id": 260,
+            "code": "rg113831",
+            "routers": "radius"
+        },
+        {
+            "id": 261,
+            "code": "rg413030",
+            "routers": "radius"
+        },
+        {
+            "id": 262,
+            "code": "rg210951",
+            "routers": "radius"
+        },
+        {
+            "id": 263,
+            "code": "rg950715",
+            "routers": "radius"
+        },
+        {
+            "id": 264,
+            "code": "rg053373",
+            "routers": "radius"
+        },
+        {
+            "id": 265,
+            "code": "rg181725",
+            "routers": "radius"
+        },
+        {
+            "id": 266,
+            "code": "rg927693",
+            "routers": "radius"
+        },
+        {
+            "id": 267,
+            "code": "rg486436",
+            "routers": "radius"
+        },
+        {
+            "id": 268,
+            "code": "rg482357",
+            "routers": "radius"
+        },
+        {
+            "id": 269,
+            "code": "rg665037",
+            "routers": "radius"
+        },
+        {
+            "id": 270,
+            "code": "rg475699",
+            "routers": "radius"
+        },
+        {
+            "id": 271,
+            "code": "rg782420",
+            "routers": "radius"
+        },
+        {
+            "id": 272,
+            "code": "rg341220",
+            "routers": "radius"
+        },
+        {
+            "id": 273,
+            "code": "rg469878",
+            "routers": "radius"
+        },
+        {
+            "id": 274,
+            "code": "rg146586",
+            "routers": "radius"
+        },
+        {
+            "id": 275,
+            "code": "rg572981",
+            "routers": "radius"
+        },
+        {
+            "id": 276,
+            "code": "rg910647",
+            "routers": "radius"
+        },
+        {
+            "id": 277,
+            "code": "rg255307",
+            "routers": "radius"
+        },
+        {
+            "id": 278,
+            "code": "rg580429",
+            "routers": "radius"
+        },
+        {
+            "id": 279,
+            "code": "rg093024",
+            "routers": "radius"
+        },
+        {
+            "id": 280,
+            "code": "rg465275",
+            "routers": "radius"
+        },
+        {
+            "id": 281,
+            "code": "rg286952",
+            "routers": "radius"
+        },
+        {
+            "id": 282,
+            "code": "rg806289",
+            "routers": "radius"
+        },
+        {
+            "id": 283,
+            "code": "rg063157",
+            "routers": "radius"
+        },
+        {
+            "id": 284,
+            "code": "rg295930",
+            "routers": "radius"
+        },
+        {
+            "id": 285,
+            "code": "rg739579",
+            "routers": "radius"
+        },
+        {
+            "id": 286,
+            "code": "rg342250",
+            "routers": "radius"
+        },
+        {
+            "id": 287,
+            "code": "rg401791",
+            "routers": "radius"
+        },
+        {
+            "id": 288,
+            "code": "rg117542",
+            "routers": "radius"
+        },
+        {
+            "id": 289,
+            "code": "rg703482",
+            "routers": "radius"
+        },
+        {
+            "id": 290,
+            "code": "rg968873",
+            "routers": "radius"
+        },
+        {
+            "id": 291,
+            "code": "rg609377",
+            "routers": "radius"
+        },
+        {
+            "id": 292,
+            "code": "rg113066",
+            "routers": "radius"
+        },
+        {
+            "id": 293,
+            "code": "rg009649",
+            "routers": "radius"
+        },
+        {
+            "id": 294,
+            "code": "rg000916",
+            "routers": "radius"
+        },
+        {
+            "id": 295,
+            "code": "rg435598",
+            "routers": "radius"
+        },
+        {
+            "id": 296,
+            "code": "rg032420",
+            "routers": "radius"
+        },
+        {
+            "id": 297,
+            "code": "rg928312",
+            "routers": "radius"
+        },
+        {
+            "id": 298,
+            "code": "rg129387",
+            "routers": "radius"
+        },
+        {
+            "id": 299,
+            "code": "rg229907",
+            "routers": "radius"
+        },
+        {
+            "id": 300,
+            "code": "rg334006",
+            "routers": "radius"
+        },
+        {
+            "id": 301,
+            "code": "rg064295",
+            "routers": "radius"
+        },
+        {
+            "id": 302,
+            "code": "rg653188",
+            "routers": "radius"
+        },
+        {
+            "id": 303,
+            "code": "rg206926",
+            "routers": "radius"
+        },
+        {
+            "id": 304,
+            "code": "rg950503",
+            "routers": "radius"
+        },
+        {
+            "id": 305,
+            "code": "rg813035",
+            "routers": "radius"
+        },
+        {
+            "id": 306,
+            "code": "rg014430",
+            "routers": "radius"
+        },
+        {
+            "id": 307,
+            "code": "rg045706",
+            "routers": "radius"
+        },
+        {
+            "id": 308,
+            "code": "rg335124",
+            "routers": "radius"
+        },
+        {
+            "id": 314,
+            "code": "zf835043",
+            "routers": "Zosoft-Mikrotik"
+        },
+        {
+            "id": 315,
+            "code": "zf991789",
+            "routers": "radius"
+        },
+        {
+            "id": 316,
+            "code": "zf975541",
+            "routers": "radius"
+        },
+        {
+            "id": 317,
+            "code": "zf84512",
+            "routers": "radius"
+        },
+        {
+            "id": 318,
+            "code": "zf957975346539",
+            "routers": "radius"
+        },
+        {
+            "id": 319,
+            "code": "zf57672",
+            "routers": "radius"
+        },
+        {
+            "id": 320,
+            "code": "zf00050",
+            "routers": "radius"
+        },
+        {
+            "id": 321,
+            "code": "zf80448",
+            "routers": "radius"
+        },
+        {
+            "id": 322,
+            "code": "zf71791",
+            "routers": "radius"
+        }
+    ]
+}
