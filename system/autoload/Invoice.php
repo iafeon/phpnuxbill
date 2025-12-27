@@ -163,7 +163,8 @@ class Invoice
         }
 
         $UPLOAD_URL_PATH = str_replace($root_path, '', $UPLOAD_PATH);
-        $logo = (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'logo.png')) ? $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.png?' . time() : $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.default.png';
+        $UPLOAD_URL_PATH = '/' . trim($UPLOAD_URL_PATH, '/');
+        $logo = (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'logo.png')) ? $UPLOAD_URL_PATH . '/logo.png?' . time() : $UPLOAD_URL_PATH . '/logo.default.png';
         $invoiceData = [
             'invoice' => "INV-" . Package::_raid(),
             'fullname' => $account->fullname,

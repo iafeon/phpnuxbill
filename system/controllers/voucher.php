@@ -9,11 +9,11 @@ $ui->assign('_title', Lang::T('Voucher'));
 $ui->assign('_system_menu', 'voucher');
 
 $action = $routes['1'];
-if(!_auth(false)){
-    if($action== 'invoice'){
+if (!_auth(false)) {
+    if ($action == 'invoice') {
         $id = $routes[2];
         $sign = $routes[3];
-        if($sign != md5($id. $db_pass)) {
+        if ($sign != md5($id . $db_pass)) {
             die("beda");
         }
         if (empty($id)) {
@@ -24,23 +24,24 @@ if(!_auth(false)){
         if ($in) {
             Package::createInvoice($in);
             $UPLOAD_URL_PATH = str_replace($root_path, '', $UPLOAD_PATH);
+            $UPLOAD_URL_PATH = '/' . trim($UPLOAD_URL_PATH, '/');
             $logo = '';
             if (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'logo.png')) {
-                $logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.png';
+                $logo = $UPLOAD_URL_PATH . '/logo.png';
                 $imgsize = getimagesize($logo);
                 $width = $imgsize[0];
                 $height = $imgsize[1];
                 $ui->assign('wlogo', $width);
                 $ui->assign('hlogo', $height);
             }
-            $ui->assign('public_url', getUrl("voucher/invoice/$id/".md5($id. $db_pass)));
+            $ui->assign('public_url', getUrl("voucher/invoice/$id/" . md5($id . $db_pass)));
             $ui->assign('logo', $logo);
             $ui->display('customer/invoice-customer.tpl');
             die();
         } else {
             r2(getUrl('voucher/list-activated'), 'e', Lang::T('Not Found'));
         }
-    }else{
+    } else {
         r2(getUrl('login'));
     }
 }
@@ -101,16 +102,17 @@ switch ($action) {
         if ($in) {
             Package::createInvoice($in);
             $UPLOAD_URL_PATH = str_replace($root_path, '', $UPLOAD_PATH);
+            $UPLOAD_URL_PATH = '/' . trim($UPLOAD_URL_PATH, '/');
             $logo = '';
             if (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'logo.png')) {
-                $logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.png';
+                $logo = $UPLOAD_URL_PATH . '/logo.png';
                 $imgsize = getimagesize($logo);
                 $width = $imgsize[0];
                 $height = $imgsize[1];
                 $ui->assign('wlogo', $width);
                 $ui->assign('hlogo', $height);
             }
-            $ui->assign('public_url', getUrl("voucher/invoice/$id/".md5($id. $db_pass)));
+            $ui->assign('public_url', getUrl("voucher/invoice/$id/" . md5($id . $db_pass)));
             $ui->assign('logo', $logo);
             $ui->display('customer/invoice-customer.tpl');
         } else {

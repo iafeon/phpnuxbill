@@ -87,35 +87,38 @@ switch ($action) {
         }
 
         $UPLOAD_URL_PATH = str_replace($root_path, '', $UPLOAD_PATH);
+        // Ensure path starts with / for absolute URL and remove trailing slashes
+        $UPLOAD_URL_PATH = '/' . trim($UPLOAD_URL_PATH, '/');
+
         if (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'logo.png')) {
-            $logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.png?' . time();
+            $logo = $UPLOAD_URL_PATH . '/logo.png?' . time();
         } else {
-            $logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.default.png';
+            $logo = $UPLOAD_URL_PATH . '/logo.default.png';
         }
         $ui->assign('logo', $logo);
 
-        if (!empty($config['login_page_logo']) && file_exists($UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . $config['login_page_logo'])) {
-            $login_logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . $config['login_page_logo'];
-        } elseif (file_exists($UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'login-logo.png')) {
-            $login_logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'login-logo.png';
+        if (!empty($config['login_page_logo']) && file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . $config['login_page_logo'])) {
+            $login_logo = $UPLOAD_URL_PATH . '/' . $config['login_page_logo'];
+        } elseif (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'login-logo.png')) {
+            $login_logo = $UPLOAD_URL_PATH . '/login-logo.png';
         } else {
-            $login_logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'login-logo.default.png';
+            $login_logo = $UPLOAD_URL_PATH . '/login-logo.default.png';
         }
 
-        if (!empty($config['login_page_wallpaper']) && file_exists($UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . $config['login_page_wallpaper'])) {
-            $wallpaper = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . $config['login_page_wallpaper'];
-        } elseif (file_exists($UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'wallpaper.png')) {
-            $wallpaper = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'wallpaper.png';
+        if (!empty($config['login_page_wallpaper']) && file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . $config['login_page_wallpaper'])) {
+            $wallpaper = $UPLOAD_URL_PATH . '/' . $config['login_page_wallpaper'];
+        } elseif (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'wallpaper.png')) {
+            $wallpaper = $UPLOAD_URL_PATH . '/wallpaper.png';
         } else {
-            $wallpaper = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'wallpaper.default.png';
+            $wallpaper = $UPLOAD_URL_PATH . '/wallpaper.default.png';
         }
 
-        if (!empty($config['login_page_favicon']) && file_exists($UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . $config['login_page_favicon'])) {
-            $favicon = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . $config['login_page_favicon'];
-        } elseif (file_exists($UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'favicon.png')) {
-            $favicon = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'favicon.png';
+        if (!empty($config['login_page_favicon']) && file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . $config['login_page_favicon'])) {
+            $favicon = $UPLOAD_URL_PATH . '/' . $config['login_page_favicon'];
+        } elseif (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'favicon.png')) {
+            $favicon = $UPLOAD_URL_PATH . '/favicon.png';
         } else {
-            $favicon = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'favicon.default.png';
+            $favicon = $UPLOAD_URL_PATH . '/favicon.default.png';
         }
 
         $ui->assign('login_logo', $login_logo);

@@ -637,5 +637,10 @@
     "Save_as_template": "Save as template",
     "Template_Name": "Template Name",
     "Sometimes_you_need_to_refresh_3_times_until_content_change": "Sometimes you need to refresh 3 times until content change",
-    "Saving_page_success": "Saving page success"
+    "Saving_page_success": "Saving page success",
+    "Edit_User": "Edit User",
+    "Sub_District": "Sub District",
+    "Ward": "Ward",
+    "User_Type": "User Type",
+    "All_fields_are_required": "All fields are required"
 }

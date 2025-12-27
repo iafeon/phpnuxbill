@@ -270,9 +270,10 @@ switch ($action) {
         }
         Package::createInvoice($in);
         $UPLOAD_URL_PATH = str_replace($root_path, '', $UPLOAD_PATH);
+        $UPLOAD_URL_PATH = '/' . trim($UPLOAD_URL_PATH, '/');
         $logo = '';
         if (file_exists($UPLOAD_PATH . DIRECTORY_SEPARATOR . 'logo.png')) {
-            $logo = $UPLOAD_URL_PATH . DIRECTORY_SEPARATOR . 'logo.png';
+            $logo = $UPLOAD_URL_PATH . '/logo.png';
             $imgsize = getimagesize($logo);
             $width = $imgsize[0];
             $height = $imgsize[1];
@@ -698,6 +699,7 @@ switch ($action) {
             $temp = str_replace('[[price]]', Lang::moneyFormat($vs['price']), $temp);
             $temp = str_replace('[[voucher_code]]', $vs['code'], $temp);
             $temp = str_replace('[[plan]]', $vs['name_plan'], $temp);
+            $temp = str_replace('[[time_limit]]', $vs['time_limit'] . 'h', $temp);
             $temp = str_replace('[[counter]]', $n, $temp);
             $voucher[] = $temp;
             $n++;
